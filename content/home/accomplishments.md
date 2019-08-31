@@ -26,7 +26,6 @@ date_format = "Jan 2006"
   certificate_url = "https://www.uta.edu"
   date_start = "2019-02-01"
   date_end = ""
-  description = "Certified by the National Security Agency
-and Department of Homeland Security"
+  description = "Certified by the National Security Agency and Department of Homeland Security"
 
 +++
