@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Nelson Bighetti
+name: Jacob Wilkins
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,26 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Computer Science Professional
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
+- name: The University of Texas at Arlington
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My interests include Information Security, Artificial Intelligence, and Java Development.
 
 interests:
+- Information Security
 - Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Java Development
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: BS in Computer Science
+    institution: The University of Texas at Arlington
+    year: 2019
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -70,6 +64,10 @@ user_groups:
 - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Born and raised in Austin, I'm a Senior Computer Science student at The University of Texas at Arlington.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+During my studies, I have developed many programs, such as a Connect 4 game in Java implementing an AI opponent, an algorithm in C for finding optimal routes between cities using heuristics, and an HTTP server in Java.
+
+I am the Founder of a personal finance website. Additionally, I have been a member of The Alpha Tau Omega - America's Leadership Development Fraternity at UT Arlington for 4 years.
+
+I hope to use my programming skills to work on more advanced and cutting-edge Artificial Intelligence and Information Security technologies. 
