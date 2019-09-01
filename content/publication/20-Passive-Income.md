@@ -41,7 +41,7 @@ projects = []
 
 # Tags (optional).
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["Information Visualization"]
+tags = ["Personal Finance"]
 
 # Links (optional).
 # url_pdf = "files/atom/atom.pdf"
@@ -74,5 +74,3 @@ image = ""
 caption = ""
 
 +++
-
-{{< figure src="/img/atom.jpg" title="Sequence of layout operations to generate a unit column chart for survivors of the Titanic by passenger class." >}}
