@@ -15,9 +15,9 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 
 [[feature]]
-  icon = "eye"
+  icon = "robot"
   icon_pack = "fas"
-  name = "Computer Vision"
+  name = "AI"
   description = "60%"
   
 [[feature]]
