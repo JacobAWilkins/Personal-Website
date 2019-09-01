@@ -43,7 +43,7 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/jacob-a-wilkins-cs/
- - icon: github
+- icon: github
   icon_pack: fab
   link: https://github.com/JacobAWilkins
 
