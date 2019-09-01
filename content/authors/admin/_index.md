@@ -23,7 +23,7 @@ bio: My interests include Information Security, Artificial Intelligence, and Jav
 interests:
 - Information Security
 - Artificial Intelligence
-- Java Development
+- Computer Vision
 
 education:
   courses:
