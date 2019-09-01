@@ -51,7 +51,7 @@ social:
 
  - icon: github
    icon_pack: fab
-   link: files/cv.pdf
+   link: https://github.com/JacobAWilkins
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
