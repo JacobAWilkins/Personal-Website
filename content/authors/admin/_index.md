@@ -14,6 +14,8 @@ role: Computer Science Student
 
 # Organizations/Affiliations
 organizations:
+- name: Computer Science Engineering
+  url: "https://cse.uta.edu/"
 - name: The University of Texas at Arlington
   url: "https://www.uta.edu/"
 
