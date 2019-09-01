@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Computer Science Professional
+role: Computer Science Student
 
 # Organizations/Affiliations
 organizations:
 - name: The University of Texas at Arlington
-  url: ""
+  url: "https://www.uta.edu/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests include Information Security, Artificial Intelligence, and Java Development.
