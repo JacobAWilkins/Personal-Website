@@ -69,9 +69,3 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
-
-[params]
-  [[params.social]]
-    icon = "cv"
-    icon_pack = "ai"
-    link = "files/cv.pdf"
