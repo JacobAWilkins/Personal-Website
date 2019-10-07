@@ -3,17 +3,17 @@
 date = 2019-09-17T00:00:00
 
 # Project title.
-title = "Movie Recommender System"
+title = "Movie Classifier"
 
 # Project summary to display on homepage.
-summary = "Recommends movies to users based upon genre preferences and ratings"
+summary = "Classifies movie descriptions by genre"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "bubbles.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["Information Security"]
+tags = ["Information Retrieval"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing"
