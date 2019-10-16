@@ -18,6 +18,7 @@ caption = ""
 +++
 
 The first step for creating the Movie Classifier is developing the search features. This goes over how I've implemented the TF-IDF, inverted index, etc.
+Project Proposal: https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing
 
 ### Deployment Instructions
 ##### Online
