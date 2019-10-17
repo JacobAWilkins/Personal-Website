@@ -69,9 +69,9 @@ for term in terms:
   score = score + current_doc.get(term, 0) * idf / (current_doc.get(term, 0) + k)
 return 0.5 + score / (2 * len(terms))
 ```
-where "terms" is a list of terms, "matches" is the first dictionary returned from collect_results(self, terms), "current doc" is the second dictionary returned from collect_results(self, terms), and "total_docs" is the total number of documents in the index. Optionally, "b" is specifies the length of the documents and "k" is used to modify scores to fall in a given range.
+where "terms" is a list of terms, "matches" is the first dictionary returned from collect_results(self, terms), "current doc" is the second dictionary returned from collect_results(self, terms), and "total_docs" is the total number of documents in the index. Optionally, "b" specifies the length of the documents and "k" is used to modify scores to fall in a given range.
 ##### Other Optimizations
-Ngrams:
+Ngram:
 Front n-grams of tokens are made from 3 to 6 in gram length
 ```
 terms = {}
