@@ -33,7 +33,7 @@ http://jacobwilkins.pythonanywhere.com/home
 ```http://127.0.0.1:5000/```
 
 ### Contributions
-For text search, I used Toastdriven's microsearch (refer to References) and added some optimizations. Firstly, I added stemming capabilities using the nltk.stem library. In addition, I fixed a bug with the BM25 algorith that resulted in a divide by zero error.
+For text search, I used Toastdriven's microsearch (refer to References) and added some optimizations. Firstly, I added stemming capabilities using the nltk.stem library. In addition, I added my own Okapi BM25 alogrithm based on the formulas from Wikipedia (refer to References).
 For the Flask web app API, I used CoreyMschafer's Flask_Blog repository (refer to References) as a starting point.
 
 ### Algorithms Explained
@@ -58,20 +58,21 @@ index = {
         ...
     }
 ```
-##### BM25 Relevance
+##### Okapi BM25
 For a given document, the BM25 relevance is calculated as
 ```
-score = b
-for term in terms:
-  if matches[term] == 0.0:
-    continue
-  idf = math.log((total_docs - matches[term] + 1.0) / matches[term]) / math.log(1.0 + total_docs)
-  score = score + current_doc.get(term, 0) * idf / (current_doc.get(term, 0) + k)
-return 0.5 + score / (2 * len(terms))
+def bm25_relevance(self, terms, matches, current_doc, total_docs, curr_len, avg_len, b, k):
+        score = 0
+
+        for term in terms:
+            idf = math.log((total_docs - matches[term] + 0.5) / (matches[term] + 0.5))
+            score = score + (current_doc.get(term, 0) * idf * (k + 1)) / (current_doc.get(term, 0) + k * (1 - b + (b * (curr_len / avg_len))))
+
+        return score
 ```
-where "terms" is a list of terms, "matches" is the first dictionary returned from collect_results(self, terms), "current doc" is the second dictionary returned from collect_results(self, terms), and "total_docs" is the total number of documents in the index. Optionally, "b" specifies the length of the documents and "k" is used to modify scores to fall in a given range.
+where "terms" is a list of terms, "matches" is the first dictionary returned from collect_results(self, terms), "current doc" is the second dictionary returned from collect_results(self, terms), "total_docs" is the total number of documents in the index, "curr_len" is the length of the current document, and "avg_len" is the average length of all the documents. "b" and "k" are used to modify scores to fall in a given range.
 ##### Other Optimizations
-Ngram:
+Ngrams:
 Front n-grams of tokens are made from 3 to 6 in gram length
 ```
 terms = {}
@@ -107,3 +108,4 @@ token = ps.stem(token)
 ### References
 I based the text search algorithm on this code: https://github.com/toastdriven/microsearch. 
 I used this code: https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog as a starting point for the development of the web app.
+I used this to develop my Okapi BM25 algorithm: https://en.wikipedia.org/wiki/Okapi_BM25
