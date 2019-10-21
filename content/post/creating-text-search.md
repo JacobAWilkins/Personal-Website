@@ -17,7 +17,7 @@ caption = ""
 
 +++
 
-The first step for creating the Movie Classifier is developing the search features. This goes over how I've implemented the TF-IDF, inverted index, etc.
+The first step for creating the Movie Classifier is developing the search features. This goes over how I've implemented the TF-IDF (Okapi BM25), inverted index, etc.
 Project Proposal: https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing
 
 ### Deployment Instructions
@@ -35,6 +35,7 @@ http://jacobwilkins.pythonanywhere.com/home
 ### Contributions
 For text search, I used Toastdriven's microsearch (refer to References) and added some optimizations. Firstly, I added stemming capabilities using the nltk.stem library. In addition, I added my own Okapi BM25 alogrithm based on the formulas from Wikipedia (refer to References).
 For the Flask web app API, I used CoreyMschafer's Flask_Blog repository (refer to References) as a starting point.
+I developed an algorithm to highlight the query tokens in the text description results. I used a post from the Salty Crane blog as a reference (refer to References).
 
 ### Algorithms Explained
 ##### Documents
@@ -104,8 +105,13 @@ ps = PorterStemmer()
 token = ps.stem(token)
 ```
 ### Test Cases
+1. Query: "The Joker wreaks havoc on the people of Gotham", Results: Found 162 results in 0.153 seconds
 
 ### References
-I based the text search algorithm on this code: https://github.com/toastdriven/microsearch. 
+I based the text search algorithm on this code: https://github.com/toastdriven/microsearch.
+
 I used this code: https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog as a starting point for the development of the web app.
+
 I used this to develop my Okapi BM25 algorithm: https://en.wikipedia.org/wiki/Okapi_BM25
+
+I referenced this when implementing highlight regular expression: https://www.saltycrane.com/blog/2007/10/using-pythons-finditer-to-highlight/
