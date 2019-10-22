@@ -1,7 +1,10 @@
-# [Academic Homepage](https://sourcethemes.com/academic/)
+# [Academic Homepage](https://jacob-wilkins.netlify.com)
+
+## Description
+Personal website for [Jacob Wilkins](https://www.linkedin.com/in/jacob-a-wilkins-cs/) available at https://jacob-wilkins.netlify.com
 
 ## Development Tool
-Academic Kickstart: https://sourcethemes.com/academic/
+* **[Academic Kickstart](https://sourcethemes.com/academic/):** The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)
 
 ## Ecosystem
 
@@ -10,7 +13,7 @@ Academic Kickstart: https://sourcethemes.com/academic/
 
 ## License
 
-Copyright 2017-present [George Cushen](https://georgecushen.com).
+Copyright 2017-present [Jacob Wilkins](https://jacob-wilkins.netlify.com/).
 
 Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
 
