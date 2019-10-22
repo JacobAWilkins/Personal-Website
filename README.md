@@ -1,7 +1,7 @@
 # [Academic Homepage](https://jacob-wilkins.netlify.com)
 
 ## Description
-Personal website for [Jacob Wilkins](https://www.linkedin.com/in/jacob-a-wilkins-cs/) available at https://jacob-wilkins.netlify.com
+Personal website for [Jacob Wilkins](https://www.linkedin.com/in/jacob-a-wilkins-cs/). Available at https://jacob-wilkins.netlify.com.
 
 ## Development Tool
 * **[Academic Kickstart](https://sourcethemes.com/academic/):** The Best Way to Create the Website You Want from Markdown (or Jupyter/RStudio)
