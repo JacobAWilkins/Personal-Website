@@ -37,6 +37,7 @@ http://jacobwilkins.pythonanywhere.com/classifer
 For the test classifer I used **[this](https://stackabuse.com/text-classification-with-python-and-scikit-learn/)** stackabuse article and **[this](https://github.com/ishmeetkohli/imdbGenreClassification/blob/master/utils.py)** GitHub repository as reference. Both of these solutions used a train test split to test the accuracy of the algorithm, but I modified it to only classify the data inputed by the user.
 
 ### Algorithms Explained
+A few of the most important libraries used were CountVectorizer, RandomForestClassifier, WordNetLemmatizer, and pandas.
 ##### Preprocess
 Before classification begins, the movie descriptions of the train/test data are preprocessed to remove all special characters, remove all single characters, remove all multiple spaces for singles spaces, and converted to lowercase. Finally, lemmantixation is performed.
 ##### Count Vectorizer
