@@ -121,3 +121,5 @@ token = ps.stem(token)
 ```
 ### Test Cases
 1. Query: ```The Joker wreaks havoc on the people of Gotham```, Results: ```Found 162 results in 0.153 seconds```
+### Challenge
+My challenge with the text search was to modify the BM25 algorithm from the reference to be more accurate. To do this I researched the algorithm and created a new algorithm that scored the documents for more accuratley.
