@@ -39,6 +39,7 @@ http://jacobwilkins.pythonanywhere.com/home
 * I developed an algorithm to highlight the query tokens in the text description results using regular expression. I used **[this](https://www.saltycrane.com/blog/2007/10/using-pythons-finditer-to-highlight/)** post from the Salty Crane blog as a reference
 
 ### Algorithms Explained
+A few of the most important libraires used were PortStemmer, json, and hashlib.
 ##### Documents Structure
 A field-based dictionary where the keys are field names and the values are the field's contents.
 ```
