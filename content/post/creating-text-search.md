@@ -17,7 +17,7 @@ caption = ""
 
 +++
 
-The first step for creating **[Movifier](https://github.com/JacobAWilkins/Movifier)** is developing the search features. Given **[this](https://www.kaggle.com/rounakbanik/the-movies-dataset)** dataset of movie titles and descriptions from Kaggle, Movifier implements text search using Okapi BM25 to score, classifies movies by genre, and generates captions for movie scenes. The text search takes a description of a movie and outputs a list of similar movies with similar descriptions. 
+The first step for creating **[Movifier](https://github.com/JacobAWilkins/Movifier)** is developing the search features. Given **[this](https://www.kaggle.com/rounakbanik/the-movies-dataset)** dataset of movie titles and descriptions from Kaggle, Movifier implements text search using Okapi BM25 to score, classifies movies by genre, and generates captions for movie scenes using the **[Flicker8k](http://academictorrents.com/details/9dea07ba660a722ae1008c4c8afdd303b6f6e53b)** dataset to train. The text search takes a description of a movie and outputs a list of similar movies with similar descriptions. 
 
 Movifier is developed using **[Flask](https://www.fullstackpython.com/flask.html)**, a lightweight WSGI web application framework. The project proposal can be found **[here](https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing)**.
 
@@ -29,17 +29,16 @@ http://jacobwilkins.pythonanywhere.com/home
 ```pip install flask```
 2. Run Movifier:
 ```sudo python main.py```
-   Wait for dataset to index movies. This will take a while unless you change the number of movies indexed to a lower number. The default is 1000. You can change this in main.py. Afterwards, you will see a message ``` * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)``` in the terminal.
-3. In browser (localhost, port 5000):
+   Wait for the dataset to index movies. This will take a while unless you change the number of movies indexed to a lower number. The default is 1000. You can change this in main.py. Afterward, you will see a message ``` * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)``` in the terminal.
+3. In a browser (localhost, port 5000):
 ```http://127.0.0.1:5000/```
 
 ### Contributions & References
-* For text search, I used Toastdriven's **[microsearch](https://github.com/toastdriven/microsearch)** repository and added some optimizations. I optimized the text search by adding stemming capabilities using the **[nltk.stem.porter](https://www.nltk.org/_modules/nltk/stem/porter.html)** module. In addition, I added my own Okapi BM25 alogrithm based on the formulas from **[Wikipedia](https://en.wikipedia.org/wiki/Okapi_BM25#The_ranking_function)**
+* For text search, I used Toastdriven's **[microsearch](https://github.com/toastdriven/microsearch)** repository and added some optimizations. I optimized the text search by adding stemming capabilities using the **[nltk.stem.porter](https://www.nltk.org/_modules/nltk/stem/porter.html)** module. Also, I added my own Okapi BM25 algorithm based on the formulas from **[Wikipedia](https://en.wikipedia.org/wiki/Okapi_BM25#The_ranking_function)**
 * For the Flask web app API, I used CoreyMschafer's **[Flask_Blog](https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog)** repository as a starting point
-* I developed an algorithm to highlight the query tokens in the text description results using regular expression. I used **[this](https://www.saltycrane.com/blog/2007/10/using-pythons-finditer-to-highlight/)** post from the Salty Crane blog as a reference
+* I developed an algorithm to highlight the query tokens in the text description results using a regular expression. I used **[this](https://www.saltycrane.com/blog/2007/10/using-pythons-finditer-to-highlight/)** post from the Salty Crane blog as a reference
 
-### Algorithms Explained
-A few of the most important libraires used were PortStemmer, json, and hashlib.
+### Data Structures
 ##### Documents Structure
 A field-based dictionary where the keys are field names and the values are the field's contents.
 ```
@@ -61,6 +60,11 @@ index = {
         ...
     }
 ```
+### Algorithms Explained
+##### Important Libraries
+* [PortStemmer](http://www.nltk.org/howto/stem.html)
+* [json](https://www.json.org/json-en.html)
+* [hashlib](https://docs.python.org/3/library/hashlib.html)
 ##### Index Algorithm
 Indexes the first 1000 movies of the movies_metadata.csv dataset. The number of movies indexed can be changed by altering the altering the boundary of the counter. Movies are saved as **[documents](#Documents-Structure)** and the terms are saved into an **[inverted index](#Inverted-Index-Structure)**. The movies are stored in JSON files to allow for easy indexing and searching.
 ```
@@ -86,6 +90,7 @@ for term in terms:
 return score
 ```
 where **terms** is the list of terms in the document, **matches** is the first dictionary returned from collect_results(self, terms), **current doc** is the second dictionary returned from collect_results(self, terms), **total_docs** is the total number of documents in the index, **curr_len** is the length of the current document, and **avg_len** is the average length of all the documents. **b** and **k** are used to modify ranking scores to fall in a given range.
+### Optimizations
 ##### Ngrams
 Front n-grams of tokens are made from 3 to 6 in gram length.
 ```
@@ -124,4 +129,4 @@ token = ps.stem(token)
 1. Query: ```The Joker wreaks havoc on the people of Gotham```, Results: ```Found 162 results in 0.153 seconds```
 
 ### Challenge
-My challenge with the text search was to modify the BM25 algorithm from the reference to be more accurate. To do this I researched the algorithm and created a new algorithm that scored the documents for more accuratley.
+My challenge with the text search was to modify the BM25 algorithm from the reference to be more accurate. To do this I researched the algorithm and created a new algorithm that scored the documents more accurately. The ranking functions I used can be found [here](https://en.wikipedia.org/wiki/Okapi_BM25#The_ranking_function)
