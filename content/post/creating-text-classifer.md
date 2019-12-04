@@ -29,21 +29,34 @@ http://jacobwilkins.pythonanywhere.com/classifer
 ```pip install flask```
 2. Run Movifier:
 ```sudo python main.py```
-   Wait for dataset to index movies. This will take a while unless you change the number of movies indexed to a lower number. The default is 1000. You can change this in main.py. Afterwards, you will see a message ``` * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)``` in the terminal.
-3. In browser (localhost, port 5000):
+   Wait for the dataset to index movies. This will take a while unless you change the number of movies indexed to a lower number. The default is 1000. You can change this in main.py. Afterward, you will see a message ``` * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)``` in the terminal.
+3. In a browser (localhost, port 5000):
 ```http://127.0.0.1:5000/classifer```
 
 ### Contributions & References
-For the test classifer I used **[this](https://stackabuse.com/text-classification-with-python-and-scikit-learn/)** stackabuse article and **[this](https://github.com/ishmeetkohli/imdbGenreClassification/blob/master/utils.py)** GitHub repository as reference. Both of these solutions used a train test split to test the accuracy of the algorithm, but I modified it to only classify the data inputed by the user.
+For the test classifier I used **[this](https://stackabuse.com/text-classification-with-python-and-scikit-learn/)** stackabuse article and **[this](https://github.com/ishmeetkohli/imdbGenreClassification/blob/master/utils.py)** GitHub repository as reference. Both of these solutions used a train test split to test the accuracy of the algorithm, but I modified it to only classify the data inputted by the user. I added to these references by transforming them into a system that uses train data to classify a single test case. I made the train and test data identical in form and used pandas to make Data Frames for the test/train allowing them to both have the same number of data features.
 
 ### Algorithms Explained
-A few of the most important libraries used were CountVectorizer, RandomForestClassifier, WordNetLemmatizer, and pandas.
+##### Important Libraries
+* [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
+* [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+* [WordNetLemmatizer](https://www.geeksforgeeks.org/python-lemmatization-with-nltk/)
+* [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html)
 ##### Preprocess
-Before classification begins, the movie descriptions of the train/test data are preprocessed to remove all special characters, remove all single characters, remove all multiple spaces for singles spaces, and converted to lowercase. Finally, lemmantixation is performed.
+Before classification begins, the movie descriptions of the train/test data are preprocessed to remove all special characters, remove all single characters, remove all multiple spaces for singles spaces, and converted to lowercase. Finally, lemmatization is performed using nltk's [WordNetLemmatizer](https://www.geeksforgeeks.org/python-lemmatization-with-nltk/).
 ##### Count Vectorizer
-The vectorizer fitted and transformed the text descriptions of the train/test data (the train movie decriptions) to identify the data features and then converted them into an array to be used for classification.
+The [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) fitted and transformed the text descriptions of the train/test data (the train movie decriptions) to identify the data features and then converted them into an array to be used for classification.
+```
+vectorizer = CountVectorizer(analyzer="word", tokenizer=None, preprocessor=None, stop_words=None, max_features=3000)
+train_data_features = vectorizer.fit_transform(trainData['plot'])
+train_data_features = train_data_features.toarray()
+```
 ##### Random Forest Classifier
-The classifier fitted the data features to the movies genres and then used this to make a prediction of the genre for the test data. The prediction is displayed for the user.
+The [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) fitted the data features to the movies genres and then used this to make a prediction of the genre for the test data. The prediction is displayed for the user.
+```
+classifier = RandomForestClassifier(n_estimators=1000, random_state=0)
+classifier = classifier.fit(train_data_features, trainData['tags'])
+```
 
 ### Challenge
-My challenge was to transform the references that were designed for test train split into a system that used train data to classify a single test case. I resolved this issue by making the train and test data identical in form and used pandas to make Data Frames for the test/train allowing them to both have the same number of data features.
+My challenge was to transform the references that were designed for test train split into a system that used train data to classify a single test case. I resolved this issue by making the train and test data identical in form and used [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) to make Data Frames for the test/train allowing them to both have the same number of data features.
