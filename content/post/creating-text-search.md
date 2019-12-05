@@ -21,6 +21,8 @@ The first step for creating **[Movifier](https://github.com/JacobAWilkins/Movifi
 
 Movifier is developed using **[Flask](https://www.fullstackpython.com/flask.html)**, a lightweight WSGI web application framework. The project proposal can be found **[here](https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing)**.
 
+The project demo can be viewed **[here](https://youtu.be/DVKHCncddg8)**.
+
 ### Deployment Instructions
 ##### Online
 http://jacobwilkins.pythonanywhere.com/home
