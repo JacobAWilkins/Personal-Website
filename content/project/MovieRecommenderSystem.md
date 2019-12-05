@@ -169,7 +169,7 @@ token = ps.stem(token)
 ### Challenge
 My challenge with the text search was to modify the BM25 algorithm from the reference to be more accurate. To do this I researched the algorithm and created a new algorithm that scored the documents more accurately. The ranking functions I used can be found [here](https://en.wikipedia.org/wiki/Okapi_BM25#The_ranking_function)
 
-# Movie Classifer Documentation
+# Movie Classifier Documentation
 * [Deployment Insctructions](#deployment-instructions-1)
   * [Online](#online-1)
   * [Localhost](#localhost-1)
