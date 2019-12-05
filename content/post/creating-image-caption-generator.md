@@ -20,6 +20,7 @@ caption = ""
 The third step for creating **[Movifier](https://github.com/JacobAWilkins/Movifier)** is developing an image caption generator. Given **[this](https://www.kaggle.com/rounakbanik/the-movies-dataset)** dataset of movie titles and descriptions from Kaggle, Movifier implements text search using Okapi BM25 to score, classifies movies by genre, and generates captions for movie scenes using the **[Flicker8k](http://academictorrents.com/details/9dea07ba660a722ae1008c4c8afdd303b6f6e53b)** dataset to train. The text search takes a description of a movie and outputs a list of similar movies with similar descriptions. 
 
 Movifier is developed using **[Flask](https://www.fullstackpython.com/flask.html)**, a lightweight WSGI web application framework. The project proposal can be found **[here](https://docs.google.com/document/d/1uDnyLfvAJTHSIp2gLQYVDAONRQX91yI2uVtycHrf1pE/edit?usp=sharing)**.
+
 The project demo can be viewed **[here](https://youtu.be/DVKHCncddg8)**.
 
 ### Deployment Instructions
