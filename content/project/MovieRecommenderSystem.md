@@ -39,7 +39,7 @@ Given **[this](https://www.kaggle.com/rounakbanik/the-movies-dataset)** dataset 
 The project demo can be viewed **[here](https://youtu.be/DVKHCncddg8)**.
 
 # Text Search Documentation
-* [Deployment Insctructions](#deployment-instructions)
+* [Deployment Instructions](#deployment-instructions)
   * [Online](#online)
   * [Localhost](#localhost)
 * [Contributions & References](#contributions--references)
@@ -255,7 +255,7 @@ gdd.download_file_from_google_drive(file_id='1V3xKf69SHmuXMiGzrBc_oiJcJshyoyIG',
 ```
 To contribute to the effictiveness of the caption generator I used the tensorflow.data.Dataset library to map the dataset into numpy files.
 
-### Algorithm Explained
+### Algorithms Explained
 ##### Important Libraries
 * [tensorflow](https://www.tensorflow.org/)
 * [sklearn.model_selection.train_test_split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)
