@@ -170,7 +170,7 @@ token = ps.stem(token)
 My challenge with the text search was to modify the BM25 algorithm from the reference to be more accurate. To do this I researched the algorithm and created a new algorithm that scored the documents more accurately. The ranking functions I used can be found [here](https://en.wikipedia.org/wiki/Okapi_BM25#The_ranking_function)
 
 # Movie Classifier Documentation
-* [Deployment Insctructions](#deployment-instructions-1)
+* [Deployment Instructions](#deployment-instructions-1)
   * [Online](#online-1)
   * [Localhost](#localhost-1)
 * [Contributions & References](#contributions--references-1)
@@ -223,7 +223,7 @@ classifier = classifier.fit(train_data_features, trainData['tags'])
 My challenge was to transform the references that were designed for test train split into a system that used train data to classify a single test case. I resolved this issue by making the train and test data identical in form and used [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) to make Data Frames for the test/train allowing them to both have the same number of data features.
 
 # Image Caption Generator Documentation
-* [Deployment Insctructions](#deployment-instructions-2)
+* [Deployment Instructions](#deployment-instructions-2)
   * [Online](#online-2)
   * [Localhost](#localhost-2)
 * [Contributions & References](#contributions--references-2)
