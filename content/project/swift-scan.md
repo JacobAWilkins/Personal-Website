@@ -3,7 +3,7 @@
 date = 2019-10-26T00:00:00
 
 # Project title.
-title = "Swfit Scan"
+title = "Swift Scan"
 
 # Project summary to display on homepage.
 summary = "Android application that scans any barcode using your mobile device and keeps an inventory of your collections."
